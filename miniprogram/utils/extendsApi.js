@@ -1,3 +1,7 @@
+/**
+ * @description 消息提示框
+ * @param {*} options 参数和wx.showToast的参数一致
+ */
 const toast = ({
   title = '数据加载中',
   icon = 'none',
@@ -12,6 +16,11 @@ const toast = ({
   })
 }
 
+/**
+ * @description 模态对话框
+ * @param {*} options 参数和wx.showModal的参数一致
+ * @returns
+ */
 const modal = (options = {}) => {
   //在方法内部需要用Promise返回用户操作
   //如果点击确定，resolve返回true
