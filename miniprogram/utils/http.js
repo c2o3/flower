@@ -1,16 +1,15 @@
-import WxRequest from './request'
+import WxRequest from 'mina-request'
 import { getStorage, clearStorage } from './storage'
 import { modal, toast } from './extendsApi'
 //实例化
 //目前写到同一个文件中方便测试
 const instance = new WxRequest({
   baseURL: 'https://gmall-prod.atguigu.cn/mall-api',
-  timeout: 15000
+  timeout: 6000
 })
 //配置请求拦截器
 instance.interceptors.request = (config) => {
   //在请求发送之前做点什么
-
   //在发送请求之前，需要先判断本地是否存在令牌token
   const token = getStorage('token')
   //如果存在token，就需要在请求头中添加token字段
@@ -23,7 +22,6 @@ instance.interceptors.request = (config) => {
 instance.interceptors.response = async (response) => {
   //从response中解构isSuccess属性
   const { isSuccess, data } = response
-
   //如果isSuccess为false，说明请求失败，弹出提示
   if (!isSuccess) {
     wx.showToast({
@@ -37,7 +35,6 @@ instance.interceptors.response = async (response) => {
     case 200:
       //在响应数据返回之后做点什么
       return data
-
     //如果返回的状态码等于208，说明没有token，或者token失效
     //就需要让用户登录或者重新登录
     case 208:
