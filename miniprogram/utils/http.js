@@ -3,7 +3,7 @@ import WxRequest from 'mina-request'
 // 导入封装的本地存储操作模块
 import { getStorage, clearStorage } from './storage'
 // 导入封装的增强 API
-import { toast, modal } from './extendsApi'
+import { toast, modal } from './extendApi'
 
 // 对类进行实例化
 const instance = new WxRequest({

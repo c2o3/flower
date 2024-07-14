@@ -13,7 +13,7 @@ ComponentWithStore({
   methods: {
     login() {
       wx.login({
-        success: async (code) => {
+        success: async ({ code }) => {
           if (code) {
             //在获取到临时登录凭证code后需要传递给开发者服务器
             const { data } = await reqLogin(code)
