@@ -1,9 +1,13 @@
 // 引入 QQMapWX 核心类
-import QQMapWX from '../../../libs/qqmap-wx-jssdk.min'
+import QQMapWX from '../../../../../libs/qqmap-wx-jssdk.min'
 // 导入 async-validator 对参数进行验证
 import Schema from 'async-validator'
 // 导入接口 API 函数
-import { reqAddAddress, reqAddressInfo, reqUpdateAddress } from '../../../api/address'
+import {
+  reqAddAddress,
+  reqAddressInfo,
+  reqUpdateAddress
+} from '../../../../../api/address'
 
 Page({
   // 页面的初始数据
@@ -196,7 +200,7 @@ Page({
     this.qqmapwx = new QQMapWX({
       // key 要使用自己申请的 key
       // 在进行逆解析的时候，如果发现 key 只能使用一次，需要在腾讯位置服务后台配置额度
-      key: 'S5CBZ-TQXCB-L73UJ-J6VJA-FXS53-JNBY3'
+      key: '6VGBZ-MA2CJ-ZXRFW-XDHJM-NEB23-7HBG4'
     })
 
     // 调用方法，实现更新的业务逻辑

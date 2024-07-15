@@ -1,17 +1,5 @@
-<view class="box">
-  <button type="warn" plain size="mini" bindtap="handler">测试发送请求</button>
-</view>
-
-<view class="box">
-  <button type="primary" plain size="mini" bindtap="handler1">测试发送请求</button>
-</view>
-
-<view class="box">
-  <button type="warn" plain size="mini" bindtap="allhandler">测试并发请求</button>
-</view>
-
 <view>
-  <button class="btn" open-type="chooseAvatar" bindchooseavater="chooseavatar">
-    <image class="avatar" src="{{ avatarUrl}}" mode="aspectFit|aspectFill|widthFix" />
-  </button>
+  <view>
+    <button type="warn" plain size="mini" bindtap="onValidator">点我</button>
+  </view>
 </view>

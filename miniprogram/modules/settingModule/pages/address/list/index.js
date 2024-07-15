@@ -1,5 +1,5 @@
 // 导入接口 API 函数
-import { reqAddressList, reqDelAddress } from '../../../api/address'
+import { reqAddressList, reqDelAddress } from '../../../../../api/address'
 import { swipeCellBehavior } from '@/behaviors/swipeCell'
 
 // 获取应用实例
