@@ -1,18 +1,17 @@
 // 导入接口 API 函数
-import { reqAddressList, reqDelAddress } from '../../../../../api/address'
-import { swipeCellBehavior } from '@/behaviors/swipeCell'
+import { reqAddressList, reqDelAddress } from '@/api/address'
+import { swiperCellBehavior } from '../../../../../behaviors/swiperCell'
 
 // 获取应用实例
 const app = getApp()
 
 Page({
-  behaviors: [swipeCellBehavior],
+  behaviors: [swiperCellBehavior],
 
   // 页面的初始数据
   data: {
     addressList: []
   },
-
   // 删除收货地址
   async delAddress(event) {
     // 解构传递的 id
