@@ -21,7 +21,7 @@ export const reqCartList = () => {
  * @param {*} isChecked 0 需要取消勾选 1 需要勾选
  * @returns
  */
-export const reqUpdateCart = ({ goodsId, isChecked }) => {
+export const reqUpdateChecked = (goodsId, isChecked) => {
   return http.get(`/cart/checkCart/${goodsId}/${isChecked}`)
 }
 /**
