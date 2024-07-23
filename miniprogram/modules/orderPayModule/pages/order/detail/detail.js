@@ -5,10 +5,12 @@ import {
   reqSubmitOrder,
   reqPrePayInfo,
   reqPayStatus
-} from '@/api/orderpay'
-import { formatTime } from '@/utils/formatTime'
+} from '../../../api/orderpay'
+import { formatTime } from '../../../utils/formatTime'
 // 导入 async-validator 对参数进行验证
 import Schema from 'async-validator'
+import { debounce } from 'licia'
+const app = getApp()
 Page({
   data: {
     buyName: '', // 订购人姓名
@@ -22,7 +24,7 @@ Page({
     orderInfo: {} // 订单商品详情
   },
   //处理提交订单
-  async submitOrder() {
+  submitOrder: debounce(async function () {
     //需要从data中结构数据
     const { buyName, buyPhone, deliveryDate, blessing, orderAddress, orderInfo } =
       this.data
@@ -43,7 +45,7 @@ Page({
       this.orderNo = res.data
       this.advancePay()
     }
-  },
+  }, 500),
   async advancePay() {
     const payParams = await reqPrePayInfo(this.orderNo)
     try {

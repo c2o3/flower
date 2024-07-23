@@ -1,9 +1,9 @@
 // 引入 QQMapWX 核心类
-import QQMapWX from '@/libs/qqmap-wx-jssdk.min'
+import QQMapWX from '../../../libs/qqmap-wx-jssdk.min'
 // 导入 async-validator 对参数进行验证
 import Schema from 'async-validator'
 // 导入接口 API 函数
-import { reqAddAddress, reqAddressInfo, reqUpdateAddress } from '@/api/address'
+import { reqAddAddress, reqAddressInfo, reqUpdateAddress } from '../../../api/address'
 
 Page({
   // 页面的初始数据

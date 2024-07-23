@@ -1,6 +1,6 @@
-import { reqGoodsInfo } from '@/api/goods'
+import { reqGoodsInfo } from '../../../api/goods'
 import { reqAddCart, reqCartList } from '@/api/cart'
-import { userBehavior } from '@/behaviors/userBehavior'
+import { userBehavior } from '../../../behaviors/userBehavior'
 // pages/goods/detail/index.js
 Page({
   behaviors: [userBehavior],
@@ -105,5 +105,16 @@ Page({
     this.goodsId = options.goodsId
     this.getGoodsInfo()
     this.getCartCount()
-  }
+  },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    return {
+      title: '所有的怦然心动都是你',
+      path: '/pages/index/index',
+      imageUrl: '../../../../../assets/images/love.jpg'
+    }
+  },
+  onShareTimeline: function () {}
 })

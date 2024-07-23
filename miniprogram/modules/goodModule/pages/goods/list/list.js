@@ -1,5 +1,5 @@
 // pages/goods/list/index.js
-import { reqGoodsList, reqGoodsInfo } from '@/api/goods'
+import { reqGoodsList, reqGoodsInfo } from '../../../api/goods'
 Page({
   /**
    * 页面的初始数据
@@ -66,5 +66,10 @@ Page({
     //Object.assign 用来合并对象，后面对象对的属性悔往前进行合并
     Object.assign(this.data.requestData, options)
     this.getGoodsList()
-  }
+  },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {},
+  onShareTimeline: function () {}
 })

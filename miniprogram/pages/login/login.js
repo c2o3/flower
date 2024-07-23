@@ -2,7 +2,8 @@ import { toast } from '../../utils/extendsApi.js'
 import { reqLogin, reqUserInfo } from '../../api/user.js'
 import { setStorage } from '../../utils/storage'
 import { ComponentWithStore } from 'mobx-miniprogram-bindings'
-import { userStore } from '../../stores/userstore.js'
+import { userStore } from '../../stores/userStore.js'
+import { debounce } from 'licia'
 
 ComponentWithStore({
   storeBindings: {
@@ -11,7 +12,7 @@ ComponentWithStore({
     actions: ['setToken', 'setUserInfo']
   },
   methods: {
-    login() {
+    login: debounce(function () {
       wx.login({
         success: async ({ code }) => {
           if (code) {
@@ -27,7 +28,7 @@ ComponentWithStore({
           }
         }
       })
-    },
+    }, 500),
     async getUserInfo() {
       const { data } = await reqUserInfo()
       setStorage('userInfo', data)
